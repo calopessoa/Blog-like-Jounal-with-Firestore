@@ -11,6 +11,7 @@ const newPost = async (req: Request, res: Response) => {
       title: req.body["title"],
       text: req.body["text"],
       author: req.body["author"],
+      date: req.body["date"],
     };
 
     await db.collection(postCollection).add(post);

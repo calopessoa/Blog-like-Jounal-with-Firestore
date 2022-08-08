@@ -22,6 +22,7 @@ const getAllPosts = async (_req: Request, res: Response) => {
             doc.data().title,
             doc.data().text,
             doc.data().author,
+            doc.data().date,
         );
         postArray.push(post as never);
       });

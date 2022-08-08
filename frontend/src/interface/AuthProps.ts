@@ -1,5 +1,5 @@
 export interface AuthProps {
-  isAuth: (value: boolean | ((prevVar: boolean) => boolean)) => void;
+  isAuth: boolean;
 }
 
 export interface SetAuthProps {

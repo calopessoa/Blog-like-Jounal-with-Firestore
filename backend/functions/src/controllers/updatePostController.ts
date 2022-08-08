@@ -9,7 +9,7 @@ const updatePost = async (req: Request, res: Response) => {
     const {id} = req.params;
     const info = req.body;
     await db.collection(postCollection).doc(id).update(info);
-    res.send("Post updated successfully");
+    res.status(200).send("Post successfully updated");
   } catch (error) {
     res.status(500).send(error);
   }

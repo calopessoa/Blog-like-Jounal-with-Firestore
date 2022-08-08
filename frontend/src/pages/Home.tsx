@@ -42,7 +42,7 @@ function Home({isAuth}: AuthProps) {
   return (
     <>
       <div className='homePage'>{postList?.map((post: any) => {
-        return <div className='post'>
+        return <div key={post?.id} className='post'>
           <div className='postHeader'>
             <div className='title'>
               <h2>{post?.title}</h2>

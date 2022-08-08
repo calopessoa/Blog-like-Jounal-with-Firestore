@@ -1,5 +1,4 @@
 import  React, { useEffect, useState } from "react";
-// import { addDoc, collection } from 'firebase/firestore'
 import { auth } from "../firebase-config";
 import { useNavigate } from 'react-router-dom';
 import { postURL } from '../routes/routes';
@@ -9,8 +8,27 @@ import {AuthProps} from "../interface/AuthProps";
 function CreatePost({ isAuth }: AuthProps) {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
-
+  const [disabled, setDisabled] = useState(true);
   const navigate = useNavigate();
+
+  // prevents the user to hack the auth. requirement before creating a post;
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/login");
+    }
+  }, [isAuth, navigate]);
+
+  useEffect(() => {
+    const validatePost = () => {
+      const minNumber = 2;
+      if (title.length >= minNumber && text.length > minNumber) {
+        setDisabled(false);
+      } else {
+        setDisabled(true);
+      }
+    }
+    validatePost();
+    }, [title, text])
 
   const createPost = async () => {
     await axios.post(postURL, {
@@ -25,13 +43,6 @@ function CreatePost({ isAuth }: AuthProps) {
       .catch(error => console.log(error));
   }
 
-  // prevents the user to hack the auth. requirement before creating a post;
-  useEffect(() => {
-    if (!isAuth) {
-      navigate("/login");
-    }
-  }, [isAuth, navigate])
-
   return (
     <div className="createPostPage">
       <div className="cpContainer">
@@ -39,16 +50,22 @@ function CreatePost({ isAuth }: AuthProps) {
         <div className="inputGp">
           <label>Title:</label>
           <input
-            placeholder="title"
+            placeholder="Your title must have at least 2 characters"
             onChange={({ target: { value }}) => { setTitle(value) }} />
         </div>
         <div className="inputGp">
           <label>Post:</label>
           <textarea
-            placeholder="text"
+            placeholder="Your text must have at least 3 characters"
             onChange={({ target: { value }}) => { setText(value) }} />
         </div>
-        <button onClick={createPost} type="submit">Submit post</button>
+        <button
+          onClick={createPost}
+          type="submit"
+          disabled={disabled}
+        >
+          Submit post
+        </button>
       </div>
     </div>
   )

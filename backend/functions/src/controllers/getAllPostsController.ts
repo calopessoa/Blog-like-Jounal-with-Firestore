@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import * as admin from "firebase-admin";
-// import { getDocs } from "firebase/firestore";
 import Post from "../interface/Post";
 
 const db = admin.firestore();

@@ -1,4 +1,4 @@
-import  React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { auth } from "../firebase-config";
 import { useNavigate } from 'react-router-dom';
 import { postURL } from '../routes/routes';
@@ -38,6 +38,7 @@ function CreatePost({ isAuth }: AuthProps) {
       text,
       author: { name: auth.currentUser?.displayName, id: auth.currentUser?.uid },
       date,
+      completed: false,
     })
       .then((response) => {
         if (response.status === 201)

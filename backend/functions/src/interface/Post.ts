@@ -6,7 +6,10 @@ export default class Post {
   public date: Date;
 
   constructor(
-      id: string, title: string, text: string, author: string, date: Date) {
+      id: string,
+      title: string,
+      text: string, author: string, date: Date,
+  ) {
     this.id = id;
     this.title = title;
     this.text = text;

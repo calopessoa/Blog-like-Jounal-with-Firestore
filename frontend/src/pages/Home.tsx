@@ -1,13 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { auth } from '../firebase-config';
+import { useEffect  } from 'react';
 import { allPostsURL } from '../routes/routes';
-import { Post } from '../interface/Post';
-import { AuthProps } from '../interface/AuthProps';
-import { postURL } from '../routes/routes';
+import PostCard from '../components/PostCard';
 
-function Home({isAuth}: AuthProps) {
-  const [postList, setPostlist] = useState<Post[]>([]);
+function Home({isAuth, searchValue, setPostList, postList}: any) {
 
   useEffect(() => {
     const getPost = () => {
@@ -15,59 +11,17 @@ function Home({isAuth}: AuthProps) {
         .then((response) => {
           const data = response.data
           if (response.status === 200)
-          setPostlist([...data]);
+            setPostList([...data]);
+          console.log(data);
         })
         .catch(error => console.log(error));
     }
     getPost();
-  }, []);
-
-  function deletePost(id: string) {
-    const url = `${postURL}/${id}`;
-
-    axios.delete(url)
-      .then((response) => {
-        if (response.status === 204)
-        setPostlist(
-          postList.filter((e) => {
-            return e.id !== id;
-          })
-        )
-      })
-      .catch(error => console.log(error));
-
-    }
-
-  const authorValidated = (post: any) => post.author.id === auth.currentUser?.uid;
+  }, [setPostList]);
 
   return (
     <>
-      <div className='homePage'>{postList?.map((post: any) => {
-        return (
-          <div key={post.id}>
-            {isAuth && authorValidated(post) &&
-          <div className='post'>
-            <div className='postHeader'>
-              <div className='title'>
-                <h2>{post?.title}</h2>
-              </div>
-
-            <aside className='deletePost'>
-              <button onClick={() => deletePost(post?.id)}>&#x1F5D1;</button>
-            </aside>
-
-            </div>
-            <article className='postTextContainer'>{post?.text}</article>
-            <article className='post-end'>
-              <h3 className='post-author'>@{post?.author?.name}</h3>
-              <h4 className='post-date'>created in {post.date}</h4>
-            </article>
-          </div>
-            }
-          </div>
-        )
-      })}
-      </div>
+      <PostCard postList={postList} setPostList={ setPostList } isAuth={isAuth} searchValue={searchValue} />
     </>
   )
 }

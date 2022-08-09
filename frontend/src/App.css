@@ -146,7 +146,7 @@ textarea {
 }
 
 .homePage .post {
-  width: 600px;
+  width: 400px;
   height: auto;
   max-height: 600px;
   background-color: rgb(250, 250, 250);
@@ -173,11 +173,10 @@ textarea {
 }
 
 .deletePost button {
-  border: none;
-
   background: none;
-  font-size: 30px;
+  border: none;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .post .postTextContainer {
@@ -187,4 +186,33 @@ textarea {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
+}
+
+.post-end {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-space {
+  margin-top: 12px;
+  display: flex;
+}
+
+.button-success {
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 6px;
+  max-height: 7vh;
+  max-width: 12vw;
+  /* width: 12vw; */
+  padding: 0.1rem 0.2rem 0.2rem 0.1rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+}
+
+.search {
+    filter: invert(1);
+    margin-left: 20px;
+    margin-right: 20px;
 }

@@ -20,11 +20,6 @@ function Home({isAuth, searchValue, setPostList, postList}: any) {
     getPost();
   }, [setPostList]);
 
-  // function welcome() {
-    
-  //     navigate("/login");
-  //   }
-  // }
 
   return (
     <>

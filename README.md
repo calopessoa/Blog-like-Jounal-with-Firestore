@@ -11,7 +11,7 @@ A journal (which requires authentication) that will enable its users to Read, Cr
   - [Tools used](#tools-used)
   - [Lessons learned](#lessons-learned)
 - [Usage](#usage)
-- [To-Do](#ToDO)
+- [ToDo](#todO)
 - [Author](#author)
 
 ## General view
@@ -83,7 +83,7 @@ npm run build
 ```bash
 npm start
 ```
-##ToDO
+## ToDo
 
 - Implement update functionality to posts
 - Implement tests

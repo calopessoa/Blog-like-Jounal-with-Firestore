@@ -28,13 +28,13 @@ Blog-Journal is a project that the user is able to create, after sign in up, rea
 ## Images
 
 <div align="center">
-  <img width="200px" height="432px" src="./frontend/src/assets/homepage.png" />
-  <img width="200px" height="432px" src="./frontend/src/assets/createpost.png" />
+  <img width="400px" height="432px" src="./frontend/src/assets/homepage.png" />
+  <img width="400px" height="432px" src="./frontend/src/assets/createpost.png" />
 </div>
 
 <div align="center">
-  <img width="200px" height="432px" src="./frontend/src/assets/postauth.png" />
-  <img width="200px" height="432px" src="./frontend/src/assets/search.png" />
+  <img width="400px" height="432px" src="./frontend/src/assets/postsauth.png" />
+  <img width="400px" height="432px" src="./frontend/src/assets/search.png" />
 </div>
 
 ## The development process

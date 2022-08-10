@@ -1,8 +1,15 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
 .App {
   text-align: center;
 }
 body {
-  background-image: url('./assets/19449872.jpg');
+  background-image: url('./assets/yellowbg.jpg');
+  background-size: cover;
   padding: 0%;
   margin: 0%;
   font-family: Arial, Helvetica, sans-serif;
@@ -37,7 +44,8 @@ a {
 .cpContainer {
   width: auto;
   height: auto;
-  padding: 20px;
+  margin-top: 16px;
+  padding: 16px;
   background-color: #282A35;
   border-radius: 12px;
   color: white;
@@ -53,17 +61,17 @@ a {
   font-size: 25px;
 }
 .cpContainer .inputGp {
-  margin-top: 30px;
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
 }
 
 .inputGp input,
 .inputGp textarea {
-  font-size: 18px;
+  font-size: 20px;
   border: none;
-  border-radius: 2px;
-  padding: 5px;
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .inputGp input {
@@ -97,6 +105,13 @@ textarea {
 
 .loginPage p {
   font-size: 30px;
+}
+
+.login-text {
+  border: 2px solid white;
+  border-radius: 6px;
+  background-color: #EFEFEF;
+  opacity: 0.9;
 }
 
 /* GOOGLE BUTTOn */
@@ -138,11 +153,11 @@ textarea {
 .homePage {
   width: 100%;
   min-height: calc(100vh - 80px);
-  height: auto;
+  max-height: 120vh;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .homePage .post {
@@ -159,7 +174,6 @@ textarea {
 .post .postHeader {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .postHeader .title {
@@ -183,7 +197,7 @@ textarea {
   word-wrap: break-word;
   height: auto;
   max-height: 400px;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
   overflow-y: auto;
 }
@@ -196,19 +210,6 @@ textarea {
 .buttons-space {
   margin-top: 12px;
   display: flex;
-}
-
-.button-success {
-  border: none;
-  outline: none;
-  color: white;
-  border-radius: 6px;
-  max-height: 7vh;
-  max-width: 12vw;
-  /* width: 12vw; */
-  padding: 0.1rem 0.2rem 0.2rem 0.1rem;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: rgb(28, 184, 65);
 }
 
 .search {

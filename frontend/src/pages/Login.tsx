@@ -16,7 +16,7 @@ function Login({ setIsAuth }: SetAuthProps) {
 
   return (
     <div className="loginPage">
-      <p>Sign in with Google to continue</p>
+      <p className='login-text'>Sign in with Google to continue</p>
       <button onClick={googleSign} className="login-with-google-btn">Sign in</button>
     </div>
   );

@@ -12,7 +12,6 @@ function Home({isAuth, searchValue, setPostList, postList}: any) {
           const data = response.data
           if (response.status === 200)
             setPostList([...data]);
-          console.log(data);
         })
         .catch(error => console.log(error));
     }

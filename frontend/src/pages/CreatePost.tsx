@@ -38,7 +38,6 @@ function CreatePost({ isAuth }: AuthProps) {
       text,
       author: { name: auth.currentUser?.displayName, id: auth.currentUser?.uid },
       date,
-      completed: false,
     })
       .then((response) => {
         if (response.status === 201)
@@ -51,7 +50,7 @@ function CreatePost({ isAuth }: AuthProps) {
   return (
     <div className="createPostPage">
       <div className="cpContainer">
-        <h1>Create a Post</h1>
+        <h1>New Post</h1>
         <div className="inputGp">
           <label>Title:</label>
           <input
@@ -70,6 +69,12 @@ function CreatePost({ isAuth }: AuthProps) {
           disabled={disabled}
         >
           Submit post
+        </button>
+        <button
+          onClick={() => { navigate("/")}}
+          type="button"
+        >
+          Back
         </button>
       </div>
     </div>

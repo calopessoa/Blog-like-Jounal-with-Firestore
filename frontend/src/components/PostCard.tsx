@@ -30,40 +30,38 @@ function PostCard({postList, setPostList, isAuth, searchValue}: any) {
   };
 
   return (
-    <>
-      <div className='homePage'>
-        {postList?.filter(renderPosts).map((post: any, index: number) => {
-        return (
-          <div key={post.id}>
-            {isAuth && authorValidated(post) &&
-          <div className='post'>
-          <div className='postHeader'>
+    <div className='homePage'>
+      {postList?.filter(renderPosts).map((post: any, index: number) => {
+      return (
+        <div key={post.id}>
+          {isAuth && authorValidated(post) &&
+        <div className='post'>
+        <div className='postHeader'>
 
-          <div className='title'>
-            <h2>{post?.title}</h2>
-          </div>
-          <section className='buttons-space'>
-
-            <aside className='deletePost'>
-              <button onClick={() => deletePost(post?.id)}>&#x1F5D1;</button>
-            </aside>
-          </section>
-
-          </div>
-
-          <article className='postTextContainer'>{post?.text}</article>
-
-          <article className='post-end'>
-            <h4 className='post-author'>@{post?.author?.name}</h4>
-            <h4 className='post-date'>criado em {post.date}</h4>
-          </article>
-          </div>
-            }
-          </div>
-          )
-        })}
+        <div className='title'>
+          <h2>{post?.title}</h2>
         </div>
-    </>
+        <section className='buttons-space'>
+
+          <aside className='deletePost'>
+            <button onClick={() => deletePost(post?.id)}>&#x1F5D1;</button>
+          </aside>
+        </section>
+
+        </div>
+
+        <article className='postTextContainer'>{post?.text}</article>
+
+        <article className='post-end'>
+          <h4 className='post-author'>@{post?.author?.name}</h4>
+          <h4 className='post-date'>criado em {post.date}</h4>
+        </article>
+        </div>
+          }
+        </div>
+        )
+      })}
+    </div>
   )
 }
 

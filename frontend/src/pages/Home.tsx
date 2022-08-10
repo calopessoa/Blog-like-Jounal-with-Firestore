@@ -1,9 +1,11 @@
 import axios from 'axios';
-import { useEffect  } from 'react';
+import { useEffect, } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { allPostsURL } from '../routes/routes';
 import PostCard from '../components/PostCard';
 
 function Home({isAuth, searchValue, setPostList, postList}: any) {
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getPost = () => {
@@ -18,9 +20,16 @@ function Home({isAuth, searchValue, setPostList, postList}: any) {
     getPost();
   }, [setPostList]);
 
+  // function welcome() {
+    
+  //     navigate("/login");
+  //   }
+  // }
+
   return (
     <>
-      <PostCard postList={postList} setPostList={ setPostList } isAuth={isAuth} searchValue={searchValue} />
+      { isAuth ? <PostCard postList={postList} setPostList={setPostList} isAuth={isAuth} searchValue={searchValue} />
+      : navigate("/login") }
     </>
   )
 }

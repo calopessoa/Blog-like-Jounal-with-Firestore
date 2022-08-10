@@ -20,12 +20,6 @@ function Home({isAuth, searchValue, setPostList, postList}: any) {
     getPost();
   }, [setPostList]);
 
-  // function welcome() {
-    
-  //     navigate("/login");
-  //   }
-  // }
-
   return (
     <>
       { isAuth ? <PostCard postList={postList} setPostList={setPostList} isAuth={isAuth} searchValue={searchValue} />

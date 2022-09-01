@@ -4,6 +4,5 @@ export interface Post {
   text: string,
   author: {
     name: string,
-  },
-  completed: boolean,
+  }
 }

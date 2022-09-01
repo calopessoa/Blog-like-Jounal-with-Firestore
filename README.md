@@ -1,6 +1,9 @@
 # Blog-like-Jounal-with-Firestore
 A journal (which requires authentication) that will enable its users to Read, Create and Delete their posts, serving as a to-do list ou just as a blog respository.
 
+### Frontend deployed at:
+https://blog-ts-firebase-f9ea4.web.app
+
 ## Table of contents
 
 - [General view](#general-view)
